@@ -17,9 +17,10 @@
     <table>
         <tr>
             <td>
-                <form>
+                <form name="LoginForm" onclick="loginUser()">
                     Email: <input type="text" id="email" required><br> <br> Password: <input type="password" id="password" required><br><br>
-                    <button type="button" onClick="loginUser()">Log in</button>
+                    <input type="submit" name="submit" value="Log in">
+                    <!-- <button type="button" onClick="loginUserFromForm()">Log in</button> -->
 
                 </form>
 

@@ -25,14 +25,18 @@ function addUser() {
         if (statusCode === 200) {
             loginUser(document.getElementById('email').value, document.getElementById('password').value);
         }
+        if (statusCode === 302) {
+            location.replace("http://localhost:8080/api/app/dashboard");
+        }
     });
 
 }
 
-function loginUser() {
+/* function loginUserFromForm() {
 
     var details, statusCode;
     var url = "http://localhost:8080/api/user/login";
+
     var response = makeAjaxRequest(url, {
         method: 'POST',
         request: {
@@ -42,27 +46,37 @@ function loginUser() {
         async: true
     }, function(details, statusCode) {
         if (statusCode === 200) {
-            location.replace("http://localhost:8080/api/user/dashboard");
+            location.replace("http://localhost:8080/api/app/dashboard");
         }
     });
 
-}
+} */
 
 
 function loginUser(emailNew, passwordNew) {
 
-    var details, statusCode;
+    var details, statusCode, password, email;
+    if (arguments.length == 2) {
+        email = emailNew;
+        password = passwordNew;
+    } else {
+        email = document.getElementById('email').value;
+        password = document.getElementById('password').value;
+    }
     var url = "http://localhost:8080/api/user/login";
     var response = makeAjaxRequest(url, {
         method: 'POST',
         request: {
-            email: emailNew,
-            password: passwordNew
+            email: email,
+            password: password
         },
         async: true
     }, function(details, statusCode) {
         if (statusCode === 200) {
-            location.replace("http://localhost:8080/api/user/dashboard");
+            location.replace("http://localhost:8080/api/app/dashboard");
+        }
+        if (statusCode === 302) {
+            location.replace("http://localhost:8080/api/app/dashboard");
         }
     });
 

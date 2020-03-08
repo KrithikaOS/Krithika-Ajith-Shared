@@ -32,7 +32,7 @@ function addUser() {
 
 }
 
-function loginUserFromForm() {
+/* function loginUserFromForm() {
 
     var details, statusCode;
     var url = "http://localhost:8080/api/user/login";
@@ -50,7 +50,7 @@ function loginUserFromForm() {
         }
     });
 
-}
+} */
 
 
 function loginUser(emailNew, passwordNew) {

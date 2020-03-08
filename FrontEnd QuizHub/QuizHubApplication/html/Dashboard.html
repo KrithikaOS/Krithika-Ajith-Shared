@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link href="/QuizHubApplication/css/Dashboard.css" rel="stylesheet">
+    <script src="/QuizHubApplication/js/Question.js"></script>
+</head>
+<!-- Body Starts Here -->
+
+<body id="body" style="overflow:hidden;">
+    <div id="question">
+        <!-- Popup Div Starts Here -->
+        <div id="popupForm">
+            <!-- Add Question Form-->
+            <form action="#" id="form" method="post" name="form">
+                <h2>Add </h2>
+                <hr> Tag: <input type="radio" id="java" name="tag" value="java">JAVA
+                <input type="radio" id="javascript" name="tag" value="javascript">JAVASCRIPT
+                <input type="radio" id="html" name="tag" value="html">HTML
+                <input type="radio" id="css" name="tag" value="css">CSS
+                <input type="radio" id="http" name="tag" value="http">HTTP<br><br> Status: <input type="radio" id="active" name="status" value="active"> Active
+                <input type="radio" id="inactive" name="status" value="inactive"> Inactive <br><br>Description: <textarea id="description" name="description" placeholder="Add your Question here"></textarea> Options: <input type="text" id="A" name="option"
+                    placeholder="Option A">
+                <input type="text" id="B" name="option" placeholder="Option B">
+                <input type="text" id="C" name="option" placeholder="Option C">
+                <input type="text" id="D" name="option" placeholder="Option D">
+                <input type="text" id="correctAnswer" placeholder="Answer Option"> <br> <br>
+                <!--<a href="javascript:%20cancelAddQuestionForm()" id="submit">Cancel</a> -->
+                <a href="javascript:%20checkEmpty()" id="submit">Add</a>
+            </form>
+        </div>
+        <!-- Popup Div Ends Here -->
+    </div>
+    <!-- Display Popup Button -->
+    <h1>Welcome to the Question Hub. Click <button id="popup" onclick="openAddQuestionForm()"> Add Question</button> to add a question.</h1>
+    <!--<button id="popup" onclick="openAddQuestionForm()">Add Question</button> -->
+</body>
+<!-- Body Ends Here -->
+
+</html>
